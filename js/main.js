@@ -312,9 +312,7 @@ $(document).ready(function () {
         containment: "main-widgets__inner",
         axis: "x",
         stop: function(e) {
-          let w = $(".main-widgets__inner").width();
-          console.log($(".draggable").position().left)
-          if ($(".draggable").position().left < -count || $(".draggable").position().left > 0) {
+          if ($(".draggable").position().left < (-count) - 200 || $(".draggable").position().left > 0) {
             $(".draggable").css("left", 0);
           } 
               
