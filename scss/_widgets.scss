@@ -1,4 +1,8 @@
 .main-widgets {
+  &__inner {
+    overflow: hidden;
+  }
+
   &__list {
     display: flex;
     padding: 20px 0;
