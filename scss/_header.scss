@@ -736,3 +736,9 @@
     display: none;
   }
 }
+
+@media (max-width: 467px) {
+  .header__logo {
+    margin-right: 15px;
+  }
+}

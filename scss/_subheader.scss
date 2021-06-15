@@ -97,3 +97,9 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  #edit-widgets {
+    display: none;
+  }
+}

@@ -866,7 +866,7 @@
   display: none;
 }
 
-.grid-stack>.grid-stack-item>.grid-stack-item-content {
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
   overflow: hidden !important;
 }
 
@@ -893,4 +893,13 @@
 
 .ui-state-disabled {
   pointer-events: initial !important;
+}
+
+@media (max-width: 767px) {
+  .grid-stack-item {
+    position: static !important;
+    margin-bottom: 15px;
+    width: 100% !important;
+    min-width: auto !important;
+  }
 }
