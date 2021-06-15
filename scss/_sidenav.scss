@@ -261,4 +261,12 @@
   .sidenav__search {
     display: block;
   }
+
+  .search input[type="text"].active,
+  .search input[type="text"]:hover,
+  .search input[type="text"]:active,
+  .search input[type="text"]:focus,
+  .search input[type="text"]:-webkit-autofill .search input[type="text"]:-internal-autofill-selected {
+    width: 100%;
+  }
 }
