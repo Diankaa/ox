@@ -36,8 +36,8 @@ $(document).ready(function () {
       $(".search__dropdown").hide();
     }
 
-    if (!$(e.target).hasClass('sidenav') && !$(e.target).hasClass('header__togggle') && !$(e.target).parents('.header__toggle').length && !$(e.target).parents('.sidenav').length) {
-      $(".sidenav, .sidenav__hidden").removeClass("active");
+    if (!$(e.target).hasClass('sidenav') && !$(e.target).hasClass('header__toggle') && !$(e.target).parents('.header__toggle').length && !$(e.target).parents('.sidenav').length) {
+      $(".header__toggle, .sidenav, .sidenav__hidden").removeClass("active");
     }
   })
 
