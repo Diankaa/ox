@@ -1,0 +1,258 @@
+.sidenav {
+  position: fixed;
+  left: 0;
+  top: 44px;
+  bottom: 0;
+  z-index: 1000;
+  padding: 0 15px;
+  width: 30px;
+  background: #193048;
+  transition: all 0.1s linear;
+
+  &__user {
+    position: relative;
+    display: none;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -15px;
+      right: -15px;
+      bottom: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  &__search {
+    display: none;
+    margin-bottom: 20px;
+
+    input[type="text"] {
+      margin-left: 0;
+      border-radius: 4px;
+      padding-left: 35px;
+      width: auto;
+      background-color: #fff;
+    }
+
+    .search_icon {
+      position: absolute;
+      left: 8px;
+      top: 20%;
+      background: url("../images/search.svg") center no-repeat;
+    }
+  }
+
+  svg {
+    position: relative;
+    z-index: 10;
+    max-width: 20px;
+  }
+
+  &__inner {
+    margin-top: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
+    width: 31px;
+    text-align: center;
+    transition: all 0.2s linear;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 50%;
+      z-index: 9;
+      margin: 0 auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-50%);
+      transition: all 0.2s linear;
+    }
+
+    &::before {
+      content: "";
+      left: 50%;
+      top: 50%;
+      border-style: solid;
+      border-width: 10px;
+      border-color: transparent #333 transparent transparent;
+      width: 0;
+      height: 0;
+    }
+
+    &::after {
+      content: attr(data-title);
+      left: calc(100% + 5px);
+      top: 50%;
+      z-index: 9;
+      border-radius: 2px;
+      padding: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+      white-space: nowrap;
+      color: #fff;
+      background: #333;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+
+    i {
+      z-index: 1;
+      width: 100%;
+      font-size: inherit;
+      color: #a0a4a8;
+      transition: all 0.2s linear;
+    }
+
+    &:hover {
+      i {
+        color: #fff;
+      }
+
+      .sidenav__hidden {
+        background-color: #1a3e62;
+      }
+
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &__hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s linear;
+  }
+
+  &__item span {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0 7px 35px;
+    width: 100%;
+    min-width: 200px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    text-align: left;
+    color: #fff;
+    transform: translateX(-5px);
+
+    .arrow {
+      margin-right: 5px;
+      width: auto;
+      transition: all 0.2s linear;
+    }
+
+    &.active {
+      width: auto;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__dropdown-menu {
+    display: none;
+    margin-bottom: 23px;
+    width: 100%;
+    background-color: #1a3e62;
+
+    a {
+      display: block;
+      padding: 8px 15px;
+      font-size: 14px;
+      color: #a7b1c2;
+      transition: all 0.2s linear;
+
+      &:hover {
+        color: #fff;
+        background-color: #204b77;
+      }
+    }
+  }
+
+  &__dropdown-parent.active {
+    + .sidenav__dropdown-menu {
+      display: block;
+    }
+
+    .arrow {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.active {
+    width: 230px;
+    transition: all 0.2s linear;
+
+    .sidenav__item::before,
+    .sidenav__item::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .sidenav__user {
+    display: block;
+  }
+}
+
+@media (max-width: 996px) {
+  .sidenav {
+    left: -1000px;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  .sidenav__hidden {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .top-icons {
+    margin-right: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sidenav__search {
+    display: block;
+  }
+}

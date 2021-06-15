@@ -1,0 +1,57 @@
+.main-widgets {
+  &__list {
+    display: flex;
+    padding: 20px 0;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 0 15px;
+    height: 62px;
+    min-width: 182px;
+    background-color: #fff;
+    transition: all 0.2s linear;
+    cursor: pointer;
+
+    &:not(:last-of-type) {
+      margin-right: 30px;
+    }
+
+    &:hover,
+    &.active {
+      text-shadow: 0.8px 0 0 #6d6d6d;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: #188ccf;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    font-size: 15px;
+    color: #6d6d6d;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      max-width: 25px;
+      max-height: 25px;
+      object-fit: cover;
+      transform: translateY(-50%);
+    }
+  }
+}

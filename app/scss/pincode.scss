@@ -1,0 +1,302 @@
+@import "global.scss";
+
+.pin-container {
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.pin-inner {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 576px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.pin-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pin-top {
+  padding: 60px 0;
+}
+
+.pin-title {
+  margin-bottom: 20px;
+}
+
+.pin-subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+}
+
+.pin-light {
+  text-align: center;
+
+  .pin-top {
+    padding-bottom: 10px;
+  }
+}
+
+.pin-dark {
+  &__top {
+    padding-right: 20px;
+    padding-left: 20px;
+    background: url("../images/Group\ 2153.png") center no-repeat;
+    background-color: #193048;
+  }
+
+  .pin-title {
+    margin-bottom: 10px;
+  }
+}
+
+.pincode {
+  flex: 2;
+
+  &__text {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #061d28;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &-top {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    img {
+      margin-right: 7px;
+      width: 19px;
+      height: 19px;
+    }
+
+    span {
+      font-size: 14px;
+      color: #f0253d;
+    }
+  }
+}
+
+.dark-pincode {
+  padding: 35px 15px 0;
+
+  .pincode__text {
+    color: #5c6268;
+  }
+}
+
+.code-fields {
+  display: flex;
+  justify-content: center;
+  height: 15px;
+
+  .fields-number {
+    margin: 0 15px;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #d8d8d8;
+
+    &.active {
+      background-color: #188ccf;
+    }
+  }
+}
+
+.line-fields {
+  display: flex;
+
+  .fields-number {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding-bottom: 3px;
+    width: 45px;
+    height: 45px;
+    font-weight: 500;
+    font-size: 28px;
+    color: #25282b;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: #e2e2e2;
+    }
+
+    &.active::after {
+      background-color: #188ccf;
+    }
+  }
+}
+
+.numbers {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    &--last {
+      position: relative;
+      justify-content: center;
+
+      .numbers__button-inner:last-of-type {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  &__button-inner {
+    width: 33.333%;
+    text-align: center;
+  }
+
+  &__button {
+    display: inline-block;
+    outline: 0;
+    border: none;
+    border-radius: 100%;
+    width: 100%;
+    height: 65px;
+    max-width: 65px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #5c6268;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    transition: all 0.2s linear;
+
+    &:active,
+    &.clicked {
+      outline: 0;
+      background-color: rgb(236, 236, 236);
+    }
+  }
+}
+
+@keyframes miss {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-25px, 0);
+  }
+
+  20% {
+    transform: translate(25px, 0);
+  }
+
+  30% {
+    transform: translate(-20px, 0);
+  }
+
+  40% {
+    transform: translate(20px, 0);
+  }
+
+  50% {
+    transform: translate(-10px, 0);
+  }
+
+  60% {
+    transform: translate(10px, 0);
+  }
+
+  70% {
+    transform: translate(-5px, 0);
+  }
+
+  80% {
+    transform: translate(5px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.miss {
+  animation: miss 0.8s ease-out 1;
+}
+
+.hide {
+  display: none;
+}
+
+.pin-content {
+  text-align: center;
+}
+
+.pin-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 210px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: #188ccf;
+}
+
+.pin-result {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10%;
+    height: 100%;
+  }
+
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 255px;
+    font-size: 24px;
+    text-align: center;
+    color: #5c6268;
+  }
+}

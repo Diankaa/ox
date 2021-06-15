@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, , user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fonts.min.css">
+    <link rel="stylesheet" href="css/pincode.min.css">
+</head>
+<body>
+    <div class="pin-container">
+        <div class="pin-inner pin-light">
+            <div class="pin-box">
+                <div class="pin-top">
+                    <h1 class="pin-title pin-dark__title">
+                        <img src="images/0.svg" alt="">
+                    </h1>
+                </div>
+                <div class="pincode">
+                    <div class="pincode__table">
+                        <div class="pincode__table-top">
+                            <p class="pincode__text">Введіть ПІН-код</p>
+                            <form class="fields code-fields" id="pin_form" method="POST">
+                                <input class="hide" type="hidden" name="id">
+                                <input class="hide" type="text" name="pin" value="">
+                                <div class="fields-number"></div>
+                                <div class="fields-number"></div>
+                                <div class="fields-number"></div>
+                                <div class="fields-number"></div>
+                            </form>
+                            <div class="pincode__error hide">
+                                <img src="images/error.svg" alt="">
+                                <span>Введено хибний пароль</span>
+                            </div>
+                        </div>
+                        <div class="numbers" id="numbers">
+                            <div class="numbers__row">
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">1</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">2</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">3</button>
+                                </div>
+                            </div>
+                            <div class="numbers__row">
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">4</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">5</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">6</button>
+                                </div>
+                            </div>
+                            <div class="numbers__row">
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">7</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">8</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">9</button>
+                                </div>
+                            </div>
+                            <div class="numbers__row numbers__row--last">
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button">0</button>
+                                </div>
+                                <div class="numbers__button-inner">
+                                    <button class="button numbers__button backspace"><img src="images/backspace.png" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pin-welcome pin-result hide">
+                <div class="pin-result__inner">
+                    <h2 class="pin-result__title">Ласкаво просимо!</h2>
+                    <img src="images/welcome.png" alt="">
+                </div>
+            </div>
+            <div class="pin-error pin-result hide">
+                <div class="pin-result__inner">
+                    <h2 class="pin-result__title">Нажаль, двері невдалось відчинити</h2>
+                    <img src="images/access_error.png" alt="">
+                    <a href="#" class="pin-btn">Відкрити додаток</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/plugins/jquery.js"></script>
+    <script src="js/pincode.js"></script>
+</body>
+</html>
