@@ -142,12 +142,13 @@
 }
 
 .block {
+  overflow-x: auto;
   padding: 15px !important;
   height: 100%;
 
   &__inner {
     position: relative;
-    overflow: auto;
+    width: 100%;
     height: 100%;
     background-color: #fff;
 
@@ -181,6 +182,29 @@
     right: 12px;
     top: 12px;
     display: none;
+  }
+
+  &.draggable-widget {
+    .block__inner {
+      display: inline-block;
+      width: auto;
+    }
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #bfbfbf;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #979797;
+    }
   }
 }
 

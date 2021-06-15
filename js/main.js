@@ -305,8 +305,6 @@ $(document).ready(function () {
         count += $(item).width();
       })
 
-      console.log(count)
-
       $(".draggable").draggable({ 
         cursor: "move", 
         containment: "main-widgets__inner",
